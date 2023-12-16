@@ -13,7 +13,7 @@ RUN apk add --no-cache \
     py3-pip \
     curl \
     && pip3 install --no-cache-dir -U pip pipenv \
-    && pipenv install --system \
+    && pipenv install --user \
     # Not 100% sure what this line does, but it's always been in the Dockerfile (aside from pointing at a different file)
     # Tests fall over without it. Investigate later.
     && sed -i 's|/bin/sh|/bin/bash|g' /usr/lib/python3.11/site-packages/testinfra/backend/docker.py
